@@ -1,0 +1,31 @@
+﻿ 2018-10-24 00:33:12,770 [P9512/D2/T147] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2018-10-23 00:33:12
+ 2018-10-24 00:44:15,150 [P9512/D2/T127] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username anhdktk@gmail.com from IP address 127.0.0.1
+ 2018-10-24 00:44:15,151 [P9512/D2/T127] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: anhdktk@gmail.com logged in from IP address 127.0.0.1
+ 2018-10-24 01:03:48,110 [P9512/D2/T123] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: anhdktk@gmail.com, IP Address: 127.0.0.1
+ 2018-10-24 01:45:43,870 [P9512/D2/T104] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username anhdktk@gmail.com from IP address 127.0.0.1
+ 2018-10-24 01:45:43,871 [P9512/D2/T104] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: anhdktk@gmail.com logged in from IP address 127.0.0.1
+ 2018-10-24 02:05:17,098 [P9512/D2/T135] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: anhdktk@gmail.com, IP Address: 127.0.0.1
+ 2018-10-24 02:20:10,273 [P9512/D2/T20] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username anhdktk@gmail.com from IP address 127.0.0.1
+ 2018-10-24 02:20:10,274 [P9512/D2/T20] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: anhdktk@gmail.com logged in from IP address 127.0.0.1
+ 2018-10-24 02:20:59,535 [P9512/D2/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2018-10-24 02:20:59,537 [P9512/D2/T111] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2018-10-24 02:21:14,661 [P9512/D2/T105] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-10-24 02:21:14,663 [P9512/D2/T105] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 1ms)
+ 2018-10-24 02:21:14,664 [P9512/D2/T105] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Editors.IEditorValidator
+ 2018-10-24 02:21:14,669 [P9512/D2/T105] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Editors.IEditorValidator (took 4ms)
+ 2018-10-24 02:21:16,826 [P9512/D2/T101] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2018-10-24 02:21:16,831 [P9512/D2/T101] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2018-10-24 02:21:34,880 [P9512/D2/T156] INFO  umbraco.content - Loading content from database...
+ 2018-10-24 02:21:38,779 [P9512/D2/T122] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2018-10-24 02:21:38,780 [P9512/D2/T122] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2018-10-24 02:21:39,486 [P9512/D2/T122] INFO  umbraco.content - Save Xml to file...
+ 2018-10-24 02:21:39,644 [P9512/D2/T122] INFO  umbraco.content - Saved Xml to file.
+ 2018-10-24 02:51:44,114 [P9512/D2/T24] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: anhdktk@gmail.com, IP Address: 127.0.0.1
+ 2018-10-24 02:55:13,477 [P9512/D2/T111] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username anhdktk@gmail.com from IP address 127.0.0.1
+ 2018-10-24 02:55:13,478 [P9512/D2/T111] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: anhdktk@gmail.com logged in from IP address 127.0.0.1
+ 2018-10-24 02:59:24,897 [P9512/D2/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2018-10-24 02:59:24,899 [P9512/D2/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2018-10-24 03:00:05,595 [P9512/D2/T63] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2018-10-24 03:00:05,596 [P9512/D2/T63] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2018-10-24 03:24:45,099 [P9512/D2/T175] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: anhdktk@gmail.com, IP Address: 127.0.0.1
+ 2018-10-24 08:31:39,794 [P9512/D2/T102] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2018-10-23 08:31:39

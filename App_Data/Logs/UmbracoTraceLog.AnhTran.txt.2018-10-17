@@ -1,0 +1,4 @@
+﻿ 2018-10-17 00:49:12,547 [P13300/D18/T91] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2018-10-16 00:49:12
+ 2018-10-17 23:37:07,341 [P13300/D18/T58] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username anhdktk@gmail.com from IP address 127.0.0.1
+ 2018-10-17 23:37:07,343 [P13300/D18/T58] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: anhdktk@gmail.com logged in from IP address 127.0.0.1
+ 2018-10-17 23:56:40,476 [P13300/D18/T52] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: anhdktk@gmail.com, IP Address: 127.0.0.1

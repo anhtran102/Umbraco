@@ -1,0 +1,27 @@
+﻿ 2018-10-19 07:57:11,315 [P13300/D18/T147] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (see exception).
+System.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=5876; handshake=1315;  ---> System.ComponentModel.Win32Exception (0x80004005): The wait operation timed out
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass20_0.<ExecuteAction>b__0()
+   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Scoping.Scope.get_Database()
+   at Umbraco.Core.Persistence.Repositories.ContentRepository.ProcessQuery(Sql sqlFull, PagingSqlQuery pagingSqlQuery, Boolean withCache, Boolean includeAllVersions)
+   at Umbraco.Core.Persistence.Repositories.ContentRepository.PerformGetByQuery(IQuery`1 query)
+   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.GetByQuery(IQuery`1 query)
+   at Umbraco.Core.Services.ContentService.GetContentForRelease()
+   at Umbraco.Core.Publishing.ScheduledPublisher.CheckPendingAndProcess()
+   at Umbraco.Web.Scheduling.ScheduledPublishing.PerformRun()
+ClientConnectionId:a59b8956-4159-4eb3-a4ff-b6f739ba05e7
+Error Number:-2,State:0,Class:11
