@@ -1,0 +1,62 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ContactUs>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+  <!-- contact -->
+  <section id="section-contact" class="section appear clearfix">
+    <div class="container">
+
+      <div class="row mar-bot40">
+        <div class="col-md-offset-3 col-md-6">
+          <div class="section-header">
+            <h2 class="section-heading animated" data-animation="bounceInUp">Contact us</h2>
+            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="cform" id="contact-form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" class="contactForm">
+
+              <div class="field your-name form-group">
+                <input type="text" name="name" placeholder="Your Name" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                <div class="validation"></div>
+              </div>
+              <div class="field your-email form-group">
+                <input type="text" name="email" placeholder="Your Email" class="cform-text" size="40" data-rule="email" data-msg="Please enter a valid email">
+                <div class="validation"></div>
+              </div>
+              <div class="field subject form-group">
+                <input type="text" name="subject" placeholder="Subject" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                <div class="validation"></div>
+              </div>
+
+              <div class="field message form-group">
+                <textarea name="message" class="cform-textarea" cols="40" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <div class="validation"></div>
+              </div>
+
+              <div class="send-btn">
+                <input type="submit" value="SEND MESSAGE" class="btn btn-theme">
+              </div>
+
+            </form>
+          </div>
+        </div>
+        <!-- ./span12 -->
+      </div>
+
+    </div>
+  </section>
+  
+ <!-- map -->
+ <section id="map" class="section appear clearfix">
+     <div style="margin:30px">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3919.207751778065!2d106.7159879!3d10.7953944!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a930e82d0b%3A0x3a362c9f8e578768!2zMTgwLCAxMTUgTmd1eeG7hW4gSOG7r3UgQ-G6o25oLCBQaMaw4budbmcgMjIsIELDrG5oIFRo4bqhbmgsIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1sen!2s!4v1540776854820" width="1280" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</section>    
