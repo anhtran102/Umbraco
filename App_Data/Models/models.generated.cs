@@ -19,14 +19,34 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "60d98491c658e4b7")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "52761530e7c7501e")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>HomePage</summary>
+	// Mixin content Type 1066 with alias "homePage"
+	/// <summary>BasePage</summary>
+	public partial interface IHomePage : IPublishedContent
+	{
+		/// <summary>Body Text</summary>
+		IHtmlString BodyText { get; }
+
+		/// <summary>FooterText</summary>
+		string FooterText { get; }
+
+		/// <summary>Header Text</summary>
+		string HeaderText { get; }
+
+		/// <summary>Short Description</summary>
+		IHtmlString ShortDescription { get; }
+
+		/// <summary>SocialLinks</summary>
+		string SocialLinks { get; }
+	}
+
+	/// <summary>BasePage</summary>
 	[PublishedContentModel("homePage")]
-	public partial class HomePage : PublishedContentModel
+	public partial class HomePage : PublishedContentModel, IHomePage
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "homePage";
@@ -50,39 +70,232 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Body Text: The main content of the page.
+		/// Body Text: Main text
 		///</summary>
 		[ImplementPropertyType("bodyText")]
 		public IHtmlString BodyText
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodyText"); }
+			get { return GetBodyText(this); }
 		}
 
+		/// <summary>Static getter for Body Text</summary>
+		public static IHtmlString GetBodyText(IHomePage that) { return that.GetPropertyValue<IHtmlString>("bodyText"); }
+
 		///<summary>
-		/// Footer Text: Copyright notice for the footer.
+		/// FooterText
 		///</summary>
 		[ImplementPropertyType("footerText")]
 		public string FooterText
 		{
-			get { return this.GetPropertyValue<string>("footerText"); }
+			get { return GetFooterText(this); }
+		}
+
+		/// <summary>Static getter for FooterText</summary>
+		public static string GetFooterText(IHomePage that) { return that.GetPropertyValue<string>("footerText"); }
+
+		///<summary>
+		/// Header Text
+		///</summary>
+		[ImplementPropertyType("headerText")]
+		public string HeaderText
+		{
+			get { return GetHeaderText(this); }
+		}
+
+		/// <summary>Static getter for Header Text</summary>
+		public static string GetHeaderText(IHomePage that) { return that.GetPropertyValue<string>("headerText"); }
+
+		///<summary>
+		/// Short Description
+		///</summary>
+		[ImplementPropertyType("shortDescription")]
+		public IHtmlString ShortDescription
+		{
+			get { return GetShortDescription(this); }
+		}
+
+		/// <summary>Static getter for Short Description</summary>
+		public static IHtmlString GetShortDescription(IHomePage that) { return that.GetPropertyValue<IHtmlString>("shortDescription"); }
+
+		///<summary>
+		/// SocialLinks
+		///</summary>
+		[ImplementPropertyType("socialLinks")]
+		public string SocialLinks
+		{
+			get { return GetSocialLinks(this); }
+		}
+
+		/// <summary>Static getter for SocialLinks</summary>
+		public static string GetSocialLinks(IHomePage that) { return that.GetPropertyValue<string>("socialLinks"); }
+	}
+
+	/// <summary>Contact Us</summary>
+	[PublishedContentModel("contactUs")]
+	public partial class ContactUs : PublishedContentModel, IHomePage
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "contactUs";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ContactUs(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContactUs, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Heading Title: Text for heading
+		/// Business License: Giấy phép kinh doanh
 		///</summary>
-		[ImplementPropertyType("headingTitle")]
-		public string HeadingTitle
+		[ImplementPropertyType("businessLicense")]
+		public IHtmlString BusinessLicense
 		{
-			get { return this.GetPropertyValue<string>("headingTitle"); }
+			get { return this.GetPropertyValue<IHtmlString>("businessLicense"); }
 		}
 
 		///<summary>
-		/// Page Title: Welcome to TTC Media
+		/// Company Name: Tên công ty
 		///</summary>
-		[ImplementPropertyType("pageTitle")]
-		public string PageTitle
+		[ImplementPropertyType("companyName")]
+		public string CompanyName
 		{
-			get { return this.GetPropertyValue<string>("pageTitle"); }
+			get { return this.GetPropertyValue<string>("companyName"); }
+		}
+
+		///<summary>
+		/// Body Text: Main text
+		///</summary>
+		[ImplementPropertyType("bodyText")]
+		public IHtmlString BodyText
+		{
+			get { return Umbraco.Web.PublishedContentModels.HomePage.GetBodyText(this); }
+		}
+
+		///<summary>
+		/// FooterText
+		///</summary>
+		[ImplementPropertyType("footerText")]
+		public string FooterText
+		{
+			get { return Umbraco.Web.PublishedContentModels.HomePage.GetFooterText(this); }
+		}
+
+		///<summary>
+		/// Header Text
+		///</summary>
+		[ImplementPropertyType("headerText")]
+		public string HeaderText
+		{
+			get { return Umbraco.Web.PublishedContentModels.HomePage.GetHeaderText(this); }
+		}
+
+		///<summary>
+		/// Short Description
+		///</summary>
+		[ImplementPropertyType("shortDescription")]
+		public IHtmlString ShortDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.HomePage.GetShortDescription(this); }
+		}
+
+		///<summary>
+		/// SocialLinks
+		///</summary>
+		[ImplementPropertyType("socialLinks")]
+		public string SocialLinks
+		{
+			get { return Umbraco.Web.PublishedContentModels.HomePage.GetSocialLinks(this); }
+		}
+	}
+
+	/// <summary>Main Artiles</summary>
+	[PublishedContentModel("mainArtiles")]
+	public partial class MainArtiles : PublishedContentModel, IHomePage
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "mainArtiles";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public MainArtiles(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<MainArtiles, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Article Title: Tiêu đề bài viết
+		///</summary>
+		[ImplementPropertyType("articleTitle")]
+		public string ArticleTitle
+		{
+			get { return this.GetPropertyValue<string>("articleTitle"); }
+		}
+
+		///<summary>
+		/// Body Text: Main text
+		///</summary>
+		[ImplementPropertyType("bodyText")]
+		public IHtmlString BodyText
+		{
+			get { return Umbraco.Web.PublishedContentModels.HomePage.GetBodyText(this); }
+		}
+
+		///<summary>
+		/// FooterText
+		///</summary>
+		[ImplementPropertyType("footerText")]
+		public string FooterText
+		{
+			get { return Umbraco.Web.PublishedContentModels.HomePage.GetFooterText(this); }
+		}
+
+		///<summary>
+		/// Header Text
+		///</summary>
+		[ImplementPropertyType("headerText")]
+		public string HeaderText
+		{
+			get { return Umbraco.Web.PublishedContentModels.HomePage.GetHeaderText(this); }
+		}
+
+		///<summary>
+		/// Short Description
+		///</summary>
+		[ImplementPropertyType("shortDescription")]
+		public IHtmlString ShortDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.HomePage.GetShortDescription(this); }
+		}
+
+		///<summary>
+		/// SocialLinks
+		///</summary>
+		[ImplementPropertyType("socialLinks")]
+		public string SocialLinks
+		{
+			get { return Umbraco.Web.PublishedContentModels.HomePage.GetSocialLinks(this); }
 		}
 	}
 
